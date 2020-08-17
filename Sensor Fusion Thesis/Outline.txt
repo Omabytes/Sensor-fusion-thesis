@@ -1,0 +1,37 @@
+Structure:
+
+✓	Dedication
+
+✓	Abstract
+
+
+☐ 	1-Introduction
+
+✓	2-Holistic Project Map
+
+✓	3-Sensor Basics
+✓	3-Sensor Experimentation & Choosing (Diagrams on mounting positions etc.)
+
+%	4-Sensor Characterisation
+
+✓	5-Kalman Filter Basics (Basically copy in previous paper written) also why choose the Kalman filter
+
+✓	6-Increasing Kalman Filter Dimensions
+✓	6-Looking at Using Quaternions for Orientation 
+
+☐	7-Simulation Testing
+
+☐	8-Final Implementation
+✓	8-Porting to Go and Integration
+
+%	9-Real World Testing
+
+✓	10-Results & Conclusion
+
+✓	11-Improvements & Further Work
+
+
+✓	Appendix
+
+✓	References
+

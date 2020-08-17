@@ -1,0 +1,9 @@
+\let\textcircled=\pgftextcircled
+\chapter{Final implementation}
+\label{chap:finalimplementation}
+
+%Describes how the system integrates with the other components in terms of communication protocols.
+
+\initial{G}olang was the language of choice for the final implementation of the algorithm for a number of reasons; the easy concurrency that Golang offers, ease of integration with other parts of the drone software and also just for the opportunity of learning a new language. On the downside, Golang's matrix libraries are not as mature as those found in older languages such as Python and so some of the ported code was not as idiomatic as would have been otherwise possible. \par
+	The ported code can be seen described in appendix \ref{app:Go}. It is implemented using the gonum matrix package "mat64" and provides identical functionality to that of the original MATLAB code. The program was tested with basic examples to assure functional correctness using reference results from the MATLAB code.\par
+    Following this the mathematical operations were split into chunks that could be calculated concurrently to improve timing efficiency. Concurrency is the act of running different portions of a program at the same time using more than one thread to reduce the program's run time. The code described in appendix \ref{app:Goconcurrent} shows how these concurrent parts were split into go functions that communicate with the main function via channels. Channels are a typed message pipeline that acts as a mediator for inter-function communication; the sending function places a message into the channel that is later collected by the receiving function. Channel calls are blocking, meaning that the functions will not continue past that line until valid information has been sent and received through the channel \cite{go2017tour}.

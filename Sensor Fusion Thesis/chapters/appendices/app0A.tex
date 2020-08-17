@@ -1,0 +1,122 @@
+%
+% file: localoperator.tex
+% author: Victor Brena
+% description: Briefly describes properties of the local operator.
+%
+
+\chapter{Simulated Average Error Raw Values}
+\label{app:rawvalues}
+
+\initial{T}ables \ref{tab:rawvalues} to \ref{tab:rawvaluesnosensordouble} give the simulation output values for average error with and without inclusion of the sensory apparatus in the filter. Average error is described as the mean distance from the true simulated value each filter time step over a large number of simulation runs. Table \ref{tab:rawvaluesnosensordouble} shows the affect that doubling simulation run time has on state estimates when no sensory apparatus input is available.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}cllcl@{}}
+\toprule
+\multicolumn{1}{l}{Aspect}                    & Axis                   & Data Source  & \multicolumn{1}{l}{Units} & Average Error \\ \midrule
+\multicolumn{1}{l}{\multirow{9}{*}{Position}} & \multirow{3}{*}{x}     & Measured     & \multirow{9}{*}{cm}       & 3.21          \\
+\multicolumn{1}{l}{}                          &                        & Extrapolated &                           & 1.96          \\
+\multicolumn{1}{l}{}                          &                        & Filtered     &                           & 1.66          \\
+\multicolumn{1}{l}{}                          & \multirow{3}{*}{y}     & Measured     &                           & 2.00          \\
+\multicolumn{1}{l}{}                          &                        & Extrapolated &                           & 1.95          \\
+\multicolumn{1}{l}{}                          &                        & Filtered     &                           & 1.65          \\
+\multicolumn{1}{l}{}                          & \multirow{3}{*}{z}     & Measured     &                           & 29.33         \\
+\multicolumn{1}{l}{}                          &                        & Extrapolated &                           & 1.94          \\
+\multicolumn{1}{l}{}                          &                        & Filtered     &                           & 1.65          \\ \midrule
+\multirow{9}{*}{Velocity}                     & \multirow{3}{*}{x}     & Measured     & \multirow{9}{*}{cm/s}     & 160.35        \\
+                                              &                        & Extrapolated &                           & 2.97          \\
+                                              &                        & Filtered     &                           & 2.87          \\
+                                              & \multirow{3}{*}{y}     & Measured     &                           & 160.32        \\
+                                              &                        & Extrapolated &                           & 2.99          \\
+                                              &                        & Filtered     &                           & 2.89          \\
+                                              & \multirow{3}{*}{z}     & Measured     &                           & 160.32        \\
+                                              &                        & Extrapolated &                           & 2.95          \\
+                                              &                        & Filtered     &                           & 2.84          \\ \midrule
+\multirow{9}{*}{Orientation}                  & \multirow{3}{*}{roll}  & Measured     & \multirow{9}{*}{o}        & 5.51          \\
+                                              &                        & Extrapolated &                           & 3.76          \\
+                                              &                        & Filtered     &                           & 3.68          \\
+                                              & \multirow{3}{*}{pitch} & Measured     &                           & 5.51          \\
+                                              &                        & Extrapolated &                           & 3.73          \\
+                                              &                        & Filtered     &                           & 3.66          \\
+                                              & \multirow{3}{*}{yaw}   & Measured     &                           & 5.50          \\
+                                              &                        & Extrapolated &                           & 3.78          \\
+                                              &                        & Filtered     &                           & 3.70          \\ \midrule
+\end{tabular}
+\caption{Average error observed in MATLAB code for each data source from the true simulated value with sensor data included in the filter over 10,000 time steps.}
+\label{tab:rawvalues}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}cllcl@{}}
+\toprule
+\multicolumn{1}{l}{Aspect}                    & Axis                   & Data Source  & \multicolumn{1}{l}{Units} & Average Error \\ \midrule
+\multicolumn{1}{l}{\multirow{9}{*}{Position}} & \multirow{3}{*}{x}     & Measured     & \multirow{9}{*}{cm}       & -          \\
+\multicolumn{1}{l}{}                          &                        & Extrapolated &                           & 54.21          \\
+\multicolumn{1}{l}{}                          &                        & Filtered     &                           & 54.21          \\
+\multicolumn{1}{l}{}                          & \multirow{3}{*}{y}     & Measured     &                           & -          \\
+\multicolumn{1}{l}{}                          &                        & Extrapolated &                           & 53.74          \\
+\multicolumn{1}{l}{}                          &                        & Filtered     &                           & 53.74          \\
+\multicolumn{1}{l}{}                          & \multirow{3}{*}{z}     & Measured     &                           & -         \\
+\multicolumn{1}{l}{}                          &                        & Extrapolated &                           & 51.64          \\
+\multicolumn{1}{l}{}                          &                        & Filtered     &                           & 51.64          \\ \midrule
+\multirow{9}{*}{Velocity}                     & \multirow{3}{*}{x}     & Measured     & \multirow{9}{*}{cm/s}     & -        \\
+                                              &                        & Extrapolated &                           & 7.81          \\
+                                              &                        & Filtered     &                           & 7.81          \\
+                                              & \multirow{3}{*}{y}     & Measured     &                           & -        \\
+                                              &                        & Extrapolated &                           & 7.71          \\
+                                              &                        & Filtered     &                           & 7.71          \\
+                                              & \multirow{3}{*}{z}     & Measured     &                           & -        \\
+                                              &                        & Extrapolated &                           & 7.32          \\
+                                              &                        & Filtered     &                           & 7.32          \\ \midrule
+\multirow{9}{*}{Orientation}                  & \multirow{3}{*}{roll}  & Measured     & \multirow{9}{*}{o}        & -          \\
+                                              &                        & Extrapolated &                           & 7.26          \\
+                                              &                        & Filtered     &                           & 7.26          \\
+                                              & \multirow{3}{*}{pitch} & Measured     &                           & -          \\
+                                              &                        & Extrapolated &                           & 7.68          \\
+                                              &                        & Filtered     &                           & 7.68          \\
+                                              & \multirow{3}{*}{yaw}   & Measured     &                           & -          \\
+                                              &                        & Extrapolated &                           & 8.00          \\
+                                              &                        & Filtered     &                           & 8.00          \\ \midrule
+\end{tabular}
+\caption{Average error observed in MATLAB code for each data source from the true simulated value without sensor data included in the filter over 10,000 time steps.}
+\label{tab:rawvaluesnosensor}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}cllcl@{}}
+\toprule
+\multicolumn{1}{l}{Aspect}                    & Axis                   & Data Source  & \multicolumn{1}{l}{Units} & Average Error \\ \midrule
+\multicolumn{1}{l}{\multirow{9}{*}{Position}} & \multirow{3}{*}{x}     & Measured     & \multirow{9}{*}{cm}       & -          \\
+\multicolumn{1}{l}{}                          &                        & Extrapolated &                           & 157.48          \\
+\multicolumn{1}{l}{}                          &                        & Filtered     &                           & 157.48          \\
+\multicolumn{1}{l}{}                          & \multirow{3}{*}{y}     & Measured     &                           & -          \\
+\multicolumn{1}{l}{}                          &                        & Extrapolated &                           & 148.85          \\
+\multicolumn{1}{l}{}                          &                        & Filtered     &                           & 148.85          \\
+\multicolumn{1}{l}{}                          & \multirow{3}{*}{z}     & Measured     &                           & -         \\
+\multicolumn{1}{l}{}                          &                        & Extrapolated &                           & 152.70          \\
+\multicolumn{1}{l}{}                          &                        & Filtered     &                           & 152.70          \\ \midrule
+\multirow{9}{*}{Velocity}                     & \multirow{3}{*}{x}     & Measured     & \multirow{9}{*}{cm/s}     & -        \\
+                                              &                        & Extrapolated &                           & 11.15          \\
+                                              &                        & Filtered     &                           & 11.15          \\
+                                              & \multirow{3}{*}{y}     & Measured     &                           & -        \\
+                                              &                        & Extrapolated &                           & 10.79          \\
+                                              &                        & Filtered     &                           & 10.79          \\
+                                              & \multirow{3}{*}{z}     & Measured     &                           & -        \\
+                                              &                        & Extrapolated &                           & 11.05          \\
+                                              &                        & Filtered     &                           & 11.05          \\ \midrule
+\multirow{9}{*}{Orientation}                  & \multirow{3}{*}{roll}  & Measured     & \multirow{9}{*}{o}        & -          \\
+                                              &                        & Extrapolated &                           & 10.79          \\
+                                              &                        & Filtered     &                           & 10.79          \\
+                                              & \multirow{3}{*}{pitch} & Measured     &                           & -          \\
+                                              &                        & Extrapolated &                           & 10.61          \\
+                                              &                        & Filtered     &                           & 10.61          \\
+                                              & \multirow{3}{*}{yaw}   & Measured     &                           & -          \\
+                                              &                        & Extrapolated &                           & 10.68          \\
+                                              &                        & Filtered     &                           & 10.68          \\ \midrule
+\end{tabular}
+\caption{Average error observed in MATLAB code for each data source from the true simulated value without sensor data included in the filter over 20,000 time steps. }
+\label{tab:rawvaluesnosensordouble}
+\end{table}
+

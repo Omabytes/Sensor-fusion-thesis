@@ -1,0 +1,24 @@
+%
+% File: abstract.tex
+% Author: V?ctor Bre?a-Medina
+% Description: Contains the text for thesis abstract
+%
+% UoB guidelines:
+%
+% Each copy must include an abstract or summary of the dissertation in not
+% more than 300 words, on one side of A4, which should be single-spaced in a
+% font size in the range 10 to 12. If the dissertation is in a language other
+% than English, an abstract in that language and an abstract in English must
+% be included.
+
+\chapter*{Abstract}
+\begin{SingleSpace}
+
+\initial{S}ensor fusion is the act of combining data from multiple sources to provide a more accurate estimate of the true value. At its most basic this could comprise of a simple average between identical sensors to try and minimise the effect of noise. This project looks at the more advanced Kalman filter which uses extrapolation and dynamic weighted averaging to produce optimal estimates. This filter was applied to the case of an autonomous rotary-wing aerial vehicle or drone to aid in object tracking and following within uncontrolled, volatile environments. Sensory apparatus was chosen to be cheap, power efficient and light due to budget restrictions and the constraints imposed by using a drone. Code was originally written and tested in MATLAB using simulated input data. Simulated test results showed a marked improvement in estimation accuracy for all state aspects when compared to naive sensor averaging, especially for those reliant on relatively high noise sensors. The code was then ported to golang so as to facilitate later integration with the drone software and to enable concurrent calculation work. Further testing needs to be done once integrated to ensure the filter is sufficient for real world use. \par
+
+%results paragraph
+
+%conclusion paragraph
+
+\end{SingleSpace}
+\clearpage

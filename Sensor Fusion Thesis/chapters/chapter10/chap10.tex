@@ -1,0 +1,41 @@
+\let\textcircled=\pgftextcircled
+\chapter{Conclusion and Further Work}
+\label{chap:conclusion}
+
+\initial{T}he Kalman filter seems to be an effective method for data fusion with the sensory apparatus currently available. Its application to the drone outlined in this project is both advantageous and relevant when looking to achieve the goals set out in the introduction of this paper. 
+
+\section{Conclusion}
+With reference to the results produced in chapter \ref{chap:simulationtesting}, the performance increases are shown in table \ref{tab:conclusion}.
+
+\begin{table}[ht]
+\centering
+
+\begin{tabular}{@{}lc@{}}
+\toprule
+Aspect      & Multiplicative Performance Increase \\ \midrule
+Position    & 6.96                                \\
+Velocity    & 55.8                                \\
+Orientation & 1.50                                \\ \bottomrule
+\end{tabular}
+\caption{Multiplicative increase in performance of the Kalman filter relative to naive sensor averaging.}
+\label{tab:conclusion}
+\end{table}
+
+The greatest performance increase was seen in velocity due to the inaccurate sensor equipment available for that state aspect, and lowest for orientation where relatively accurate sensor data is available. There is still room for improvement as will be discussed in section \ref{sec:furtherwork} however it is believed that sufficient base functionality has been established. This can be confirmed with real world testing to ensure the safety of the platform is never compromised.
+
+\section{Further Work}
+\label{sec:furtherwork}
+\subsection{Integration and Real World testing}
+The filter code needs to be integrated with the code handling sensory apparatus so as to receive data input, and also to the flight controller so as to provide output data. As the target code is written largely in the same language this should be a fairly simple process. Following that, further testing of the filter needs to be done once the drone itself is fully functional to finish characterisation of all the noise parameters.
+
+\subsection{Improved Sensory Apparatus}
+Discussed in chapter \ref{chap:sensors} was the promising but infeasible LiDAR system. There could be area here to develop a more cost efficient version of this system using cheap off the shelf components which would greatly enhance the information input available.
+
+\subsection{Kalman Filter Variants}
+In chapter \ref{chap:introkalmanfilter} the idea of Kalman filter variants was looked at and dismissed as unnecessary. In the event of a future change in instrumentation or use conditions, these variants may become useful. The extended Kalman filter is the standard used in many commercially available products. It does however have some aforementioned drawbacks in terms of being suboptimal, not being completely stable under some starting conditions, and generally being difficult to implement \cite{julier2004unscented}. The much lauded alternative to the EKF is the Sigma-point (unscented) Kalman filter which may well be a better alternative to the EKF for further developments of this project \cite{van2004sigma}.
+
+\subsection{Multiple Filters}
+Pushing the data through multiple filters then combining the estimates could be an interesting experiment to see if more accurate estimates can be obtained. This paper would suggest a filter based on Dempster-Schafer filter to be a good starting consideration.
+
+\subsection{Dynamic Noise Updates}
+As has been stressed previously, the Kalman filter relies heavily on accurate characterisation of the sensor behaviour. This also needs to be done prior to run time and the values cannot be altered later on if the sensor behaviour changes. Reasons for characteristic changes could include but are not limited to alteration in environmental conditions or sensor malfunction. Ideally the sensor noise would be able to be be dynamically updated during filter runtime to reflect estimated accuracy. Eom \textit{et al.} looked at using a neural network to estimate measurement noise covariance \cite{eom2011improved}. This could either be investigated further, or a more naive approach could be looked at which has slightly lower performance but with the benefit of greatly reduced complexity and computational load.
